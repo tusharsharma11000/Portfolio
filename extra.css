@@ -51,15 +51,15 @@ background-clip:text;
 color:transparent;
 }
 
-/* GRID */
+/* SUB TITLES */
 
-.extra-container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:40px;
-max-width:1000px;
-margin:auto;
+.sub-title{
+font-size:28px;
+margin:50px 0 20px 0;
+text-align:center;
+color:#8b5cf6;
 }
+
 
 /* CARD */
 
@@ -67,9 +67,9 @@ margin:auto;
 background:#14233f;
 padding:30px;
 border-radius:15px;
-position:relative;
 transition:0.3s;
 border:1px solid rgba(255,255,255,0.05);
+margin-bottom:40px;
 }
 
 .extra-card:hover{
@@ -77,15 +77,45 @@ transform:translateY(-10px);
 box-shadow:0 0 25px rgba(139,92,246,0.3);
 }
 
-/* DATE */
 
-.date{
-position:absolute;
-top:20px;
-right:20px;
-font-size:12px;
-color:#aaa;
+/* FLEX LAYOUT (IMPORTANT FIX) */
+
+.extra-flex{
+display:flex;
+align-items:flex-start; /* better alignment */
+justify-content:space-between;
+gap:40px;
+flex-wrap:wrap;
 }
+
+
+/* LEFT TEXT */
+
+.extra-text{
+flex:1;
+min-width:280px;
+}
+
+
+/* RIGHT IMAGE */
+
+.extra-image{
+flex:1;
+display:flex;
+justify-content:flex-end;
+}
+
+.extra-image img{
+width:100%;
+max-width:380px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.extra-image img:hover{
+transform:scale(1.05);
+}
+
 
 /* TEXT */
 
@@ -108,26 +138,17 @@ color:#aaa;
 margin-bottom:8px;
 }
 
-/* IMAGE */
 
-.extra-img{
-width:100%;
-height:180px;
-object-fit:cover;
-border-radius:12px;
-margin-bottom:15px;
-transition:0.4s;
+/* DATE (FIXED ISSUE HERE) */
+
+.date{
+display:block;
+text-align:right;
+font-size:12px;
+color:#aaa;
+margin-bottom:10px;
 }
 
-.extra-card:hover .extra-img{
-transform:scale(1.05);
-}
-
-/* CONTENT WRAP */
-
-.extra-content{
-position:relative;
-}
 
 /* BUTTON */
 
@@ -146,4 +167,87 @@ transition:0.3s;
 .extra-btn:hover{
 transform:scale(1.05);
 box-shadow:0 0 15px rgba(139,92,246,0.6);
+}
+
+
+/* RESPONSIVE (VERY IMPORTANT) */
+
+@media(max-width:768px){
+
+.extra-flex{
+flex-direction:column;
+}
+
+.extra-image{
+justify-content:center;
+}
+
+.extra-image img{
+max-width:100%;
+}
+
+}
+
+.edu-row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:10px;
+flex-wrap:wrap;
+}
+
+.university{
+color:#ccc;
+font-size:16px;
+}
+
+.date{
+color:#aaa;
+font-size:13px;
+}
+
+
+
+.extra-flex{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:40px;
+margin-bottom:60px;
+flex-wrap:wrap;
+}
+
+.extra-text{
+flex:1;
+min-width:280px;
+}
+
+.extra-image{
+flex:1;
+text-align:right;
+}
+
+.extra-image img{
+width:100%;
+max-width:420px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.extra-image img:hover{
+transform:scale(1.05);
+}
+
+/* SAME ROW FOR NAME + DATE */
+.edu-row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:10px;
+flex-wrap:wrap;
+}
+
+.date{
+color:#aaa;
+font-size:13px;
 }
